@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Poppins', sans-serif; /* Updated default font */
+}
+
+@layer base {
+  :root {
+    --background: 210 17% 98%; /* #f9fafb Light Gray */
+    --foreground: 215 28% 17%; /* #111827 Dark Gray */
+    --card: 0 0% 100%; /* #ffffff White */
+    --card-foreground: 215 28% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+    --primary: 243 75% 59%; /* #4f46e5 Indigo */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+    --secondary: 210 17% 92%; /* Lighter gray for secondary elements */
+    --secondary-foreground: 215 28% 25%;
+    --muted: 210 17% 92%;
+    --muted-foreground: 215 20% 45%;
+    --accent: 160 70% 37%; /* #10b981 Emerald */
+    --accent-foreground: 0 0% 100%; /* White text on accent */
+    --destructive: 0 84.2% 60.2%; /* #ef4444 Red */
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 17% 88%; /* Slightly darker gray for borders */
+    --input: 210 17% 88%;
+    --ring: 243 75% 59%; /* Indigo for focus rings */
+    --chart-1: 243 75% 59%;
+    --chart-2: 160 70% 37%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 0.5rem;
+
+    /* Sidebar specific colors */
+    --sidebar-background: 210 20% 96%; /* Slightly off-white for sidebar */
+    --sidebar-foreground: 215 28% 25%; /* Darker text for sidebar */
+    --sidebar-primary: 243 75% 59%; /* Indigo for active/primary items in sidebar */
+    --sidebar-primary-foreground: 0 0% 100%; /* White text */
+    --sidebar-accent: 210 17% 90%; /* Hover/accent state in sidebar */
+    --sidebar-accent-foreground: 215 28% 17%; /* Text color for hover/accent */
+    --sidebar-border: 210 17% 85%;
+    --sidebar-ring: 243 75% 59%;
+  }
+
+  .dark {
+    --background: 215 28% 17%; /* Dark Gray */
+    --foreground: 210 17% 98%; /* Light Gray */
+    --card: 215 28% 22%; /* Slightly lighter dark gray */
+    --card-foreground: 210 17% 98%;
+    --popover: 215 28% 22%;
+    --popover-foreground: 210 17% 98%;
+    --primary: 243 75% 69%; /* Lighter Indigo for dark mode */
+    --primary-foreground: 215 28% 10%; /* Darker text on primary */
+    --secondary: 215 28% 25%;
+    --secondary-foreground: 210 17% 98%;
+    --muted: 215 28% 25%;
+    --muted-foreground: 210 17% 65%;
+    --accent: 160 70% 47%; /* Lighter Emerald for dark mode */
+    --accent-foreground: 215 28% 10%;
+    --destructive: 0 72% 51%; /* Dark mode red */
+    --destructive-foreground: 0 0% 98%;
+    --border: 215 28% 30%;
+    --input: 215 28% 30%;
+    --ring: 243 75% 69%;
+
+    /* Dark Sidebar specific colors */
+    --sidebar-background: 215 28% 15%; /* Even darker for sidebar */
+    --sidebar-foreground: 210 17% 90%;
+    --sidebar-primary: 243 75% 69%;
+    --sidebar-primary-foreground: 215 28% 10%;
+    --sidebar-accent: 215 28% 25%;
+    --sidebar-accent-foreground: 210 17% 98%;
+    --sidebar-border: 215 28% 28%;
+    --sidebar-ring: 243 75% 69%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background) / 0.5);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.7);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+

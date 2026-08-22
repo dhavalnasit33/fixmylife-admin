@@ -1,0 +1,18 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /blog/wp-admin/
+Disallow: /blog/wp-login.php
+Disallow: /blog/wp-includes/
+Disallow: /blog/xmlrpc.php
+Disallow: /blog/?s=*
+Disallow: /blog/*?replytocom=*
+Disallow: /*?utm_*
+Disallow: /*?sessionid=*
+
+# Host
+Host: https://onechatai.ai
+
+# Sitemaps
+Sitemap: https://onechatai.ai/sitemap.xml
+Sitemap: https://onechatai.ai/blog/sitemap.xml
