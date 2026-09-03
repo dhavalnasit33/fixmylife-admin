@@ -72,6 +72,7 @@ import {
   Code,
   Video,
   Magnet,
+  FolderTree,
 } from "lucide-react";
 import NavItems, { type NavItem } from "./NavItems";
 // import { cn } from '@/lib/utils'; // Not used
@@ -502,6 +503,12 @@ export const navItemsList: NavItem[] = [
         icon: Video,
         permission: "viewVideoPromptMenu",
       },
+      {
+  href: "/dashboard/video-taxonomy",
+  label: "Video Taxonomy",
+  icon: FolderTree, // or Video
+  permission: "viewVideoTaxonomyMenu",
+}
     ],
   },
   {

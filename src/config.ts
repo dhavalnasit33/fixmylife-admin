@@ -1,8 +1,8 @@
 // export const API_BASE_URL = "https://api.staging.fixmylife.ai/api";
 // export const APP_URL = "https://admin.staging.fixmylife.ai";
 
-// export const API_BASE_URL = "http://localhost:5000/api";
-export const API_BASE_URL = "https://api.onechatai.ai/api";
+export const API_BASE_URL = "http://localhost:5000/api";
+// export const API_BASE_URL = "https://api.onechatai.ai/api";
 export const APP_URL = "https://onechatai.ai";
 
 export type Permission =
@@ -265,7 +265,12 @@ export type Permission =
   | "createAlternativeTools"
   | "editAlternativeTools"
   | "deleteAlternativeTools"
-  | "alternativeToolsMenuStatusChange";
+  | "alternativeToolsMenuStatusChange"
+    | "viewVideoTaxonomyMenu"
+  | "createVideoTaxonomy"
+  | "editVideoTaxonomy"
+  | "deleteVideoTaxonomy"
+  | "videoTaxonomyStatusChange";
 
 export const ALL_PERMISSIONS: Permission[] = [
   "view_users",
