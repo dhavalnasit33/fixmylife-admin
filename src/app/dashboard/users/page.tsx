@@ -646,14 +646,14 @@ export default function UsersPage() {
                       {user.remaining_tokens}
                     </TableCell>
 
-                    <TableCell className="hidden md:table-cell text-center">
-                      {user.subscription_status === "trialing"
+                   <TableCell className="hidden md:table-cell text-center">
+                      {user.subscription_status === "trialing" || user.plan === "basic"
                         ? "-"
                         : user.image_credits}
                     </TableCell>
 
                     <TableCell className="hidden md:table-cell text-center">
-                      {user.subscription_status === "trialing"
+                      {user.subscription_status === "trialing" || user.plan === "basic"
                         ? "-"
                         : user.video_credits}
                     </TableCell>
