@@ -439,6 +439,12 @@ export default function UsersPage() {
               <TableHead className="hidden md:table-cell text-center">
                 Tokens
               </TableHead>
+              <TableHead className="hidden md:table-cell text-center">
+                image
+              </TableHead>
+              <TableHead className="hidden md:table-cell text-center">
+                video
+              </TableHead>
               <TableHead className="hidden sm:table-cell text-center">
                 Status
               </TableHead>
@@ -628,6 +634,14 @@ export default function UsersPage() {
 
                     <TableCell className="hidden md:table-cell text-center">
                       {user.remaining_tokens}
+                    </TableCell>
+
+                    <TableCell className="hidden md:table-cell text-center">
+                      {user.subscription_status === "trialing" ? "-" : user.image_credits}
+                    </TableCell>
+
+                    <TableCell className="hidden md:table-cell text-center">
+                      {user.subscription_status === "trialing" ? "-" : user.video_credits}
                     </TableCell>
                     {/* <TableCell className="hidden sm:table-cell text-center">
                       <Badge

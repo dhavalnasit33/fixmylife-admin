@@ -22,6 +22,8 @@ export interface User {
   region?: string;
   gender?: string;
   remaining_tokens: number;
+  image_credits: number;
+  video_credits: number;
   roles: Role[];
   status: "active" | "suspended" | "inactive";
   profile_picture?: string | null;
