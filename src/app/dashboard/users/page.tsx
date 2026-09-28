@@ -398,8 +398,8 @@ export default function UsersPage() {
         selectedUsers={selectedUsers}
       />
 
-      <div className="rounded-md border shadow-sm mt-4">
-        <Table>
+      <div className="mt-4 w-full overflow-hidden rounded-md border shadow-sm bg-card">
+        <Table className="min-w-[1400px] w-full">
           <TableHeader>
             <TableRow>
               {canDeleteUsers && (
@@ -451,8 +451,12 @@ export default function UsersPage() {
               {isAdmin && (
                 <TableHead className="hidden lg:table-cell">Roles</TableHead>
               )}
-              <TableHead className="hidden lg:table-cell">Joined</TableHead>
-              <TableHead className="hidden lg:table-cell">Last Login</TableHead>
+              <TableHead className="hidden lg:table-cell whitespace-nowrap">
+                Joined
+              </TableHead>
+              <TableHead className="hidden lg:table-cell whitespace-nowrap">
+                Last Login
+              </TableHead>
               {canViewUsers &&
                 (canDeleteUsers ||
                   canEditUsers ||
@@ -488,6 +492,12 @@ export default function UsersPage() {
                   </TableCell>
                   <TableCell className="hidden md:table-cell">
                     <Skeleton className="h-4 w-16" />
+                  </TableCell>
+                  <TableCell className="hidden md:table-cell text-center">
+                    <Skeleton className="h-4 w-12 mx-auto" />
+                  </TableCell>
+                  <TableCell className="hidden md:table-cell text-center">
+                    <Skeleton className="h-4 w-12 mx-auto" />
                   </TableCell>
                   <TableCell className="hidden md:table-cell text-center">
                     <Skeleton className="h-4 w-12 mx-auto" />
@@ -637,11 +647,15 @@ export default function UsersPage() {
                     </TableCell>
 
                     <TableCell className="hidden md:table-cell text-center">
-                      {user.subscription_status === "trialing" ? "-" : user.image_credits}
+                      {user.subscription_status === "trialing"
+                        ? "-"
+                        : user.image_credits}
                     </TableCell>
 
                     <TableCell className="hidden md:table-cell text-center">
-                      {user.subscription_status === "trialing" ? "-" : user.video_credits}
+                      {user.subscription_status === "trialing"
+                        ? "-"
+                        : user.video_credits}
                     </TableCell>
                     {/* <TableCell className="hidden sm:table-cell text-center">
                       <Badge
@@ -688,13 +702,13 @@ export default function UsersPage() {
                         {user.roles.join(", ")}
                       </TableCell>
                     )}
-                    <TableCell className="hidden lg:table-cell text-sm text-muted-foreground">
+                    <TableCell className="hidden lg:table-cell text-sm text-muted-foreground whitespace-nowrap">
                       <ClientFormattedDate
                         dateInput={user.createdAt}
                         formatString="MMM d, yyyy"
                       />
                     </TableCell>
-                    <TableCell className="hidden lg:table-cell text-sm text-muted-foreground">
+                    <TableCell className="hidden lg:table-cell text-sm text-muted-foreground whitespace-nowrap">
                       {user.lastLogin ? (
                         <ClientFormattedDate
                           dateInput={user.lastLogin}
@@ -726,7 +740,7 @@ export default function UsersPage() {
               })
             ) : (
               <TableRow>
-                <TableCell colSpan={10} className="text-center h-24">
+                <TableCell colSpan={18} className="text-center h-24">
                   No users found. Try adjusting filters.
                 </TableCell>
               </TableRow>

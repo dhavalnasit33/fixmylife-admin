@@ -44,7 +44,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
   }
 
   return (
-    <div className="flex min-h-screen w-full bg-muted/40">
+    <div className="flex min-h-screen w-full bg-background">
       <Sidebar />
       <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-72 flex-1 print:sm:pl-0">
         <Header />
